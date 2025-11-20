@@ -38,6 +38,63 @@
         </div>
       </div>
 
+        <!-- PROJECT PROGRESS -->
+        <div id="project-progress">
+          <div class="subheader-text">Project Progress</div>
+          <div class="project-details-content">
+            <div class="body-text">I began the semester by outlining the core components of the system and gathering available hardware: a Raspberry Pi 4, an RC522 RFID reader, an Arducam IMX219 ribbon camera, a breadboard, jumper wires, and RFID cards. The first milestone was getting the Raspberry Pi fully set up, installing Raspberry Pi OS, enabling SSH, and verifying that the Pi camera subsystem worked.</div>
+            <div class="body-text">After confirming the camera worked with the rpicam-hello preview tool, I integrated it into Python using OpenCV. This enabled real-time video streaming and face detection using Haar cascades. Separately, I set up the RC522 RFID module over SPI, verified my wiring, and used test scripts to reliably read card UIDs.</div>
+            <div class="body-text">Once both systems worked independently, I combined them into a single program. The final script waits for an RFID card, checks if it matches an authorized UID, and then gives the user up to 15 seconds to present their face to the camera. If both conditions are satisfied, the system displays “ACCESS GRANTED” for five seconds before shutting down. If any part fails, like wrong card or no detected face, it displays “ACCESS DENIED.”</div>
+            <div class="body-text">By the end of the project, I had a fully functional prototype demonstrating multi-factor authentication on embedded hardware.</div>
+          </div>
+        </div>
+
+        <!-- SUCCESSES & CHALLENGES -->
+        <div id="successes-challenges">
+          <div class="subheader-text">Successes and Challenges</div>
+          <div class="project-details-content">
+            <div class="body-text">One of the biggest successes of this project was getting the camera and computer vision pipeline fully operational. Raspberry Pi OS changed quite a bit with the Bookworm release, so many online tutorials using the old libcamera stack no longer worked. Getting OpenCV to interface properly with Picamera2 required careful debugging and reading updated documentation.</div>
+            <div class="body-text">Another challenge was the RFID library installation. Python package restrictions in Bookworm initially prevented system-wide installation. After researching PEP 668 and SPI requirements, I found a modern library compatible with the Pi and successfully integrated it. These issues taught me how to troubleshoot compatibility problems and read error logs critically.</div>
+            <div class="body-text">The face detection and RFID systems both worked reliably once integrated, and seeing the full project come together was extremely rewarding.</div>
+          </div>
+        </div>
+
+        <!-- ECE SKILLS GAINED -->
+        <div id="ece-skills">
+          <div class="subheader-text">ECE Skills Gained</div>
+          <div class="project-details-content">
+            <div class="body-text"><strong>GPIO and Sensor Interfacing</strong><br>I learned how SPI communication works on the Raspberry Pi and how to use GPIO pins to interface with external sensors like the RC522 RFID reader.</div>
+            <div class="body-text"><strong>Embedded Linux Development</strong><br>I gained experience working in a Linux environment, installing libraries, debugging system-level issues, configuring interfaces, and using terminal tools.</div>
+            <div class="body-text"><strong>Computer Vision Fundamentals</strong><br>Working with OpenCV, Haar cascades, and real-time video processing provided practical exposure to CV concepts.</div>
+            <div class="body-text"><strong>Python for Hardware Control</strong><br>I built a complete embedded application in Python that integrates multiple asynchronous input sources into a single control-flow system.</div>
+            <div class="body-text"><strong>Problem Solving and Debugging</strong><br>Most issues did not have direct answers online due to OS changes, so I learned to troubleshoot hardware, dependency conflicts, and real-time sensor issues independently.</div>
+          </div>
+        </div>
+
+        <!-- FINAL THOUGHTS -->
+        <div id="final-thoughts">
+          <div class="subheader-text">Final Thoughts</div>
+          <div class="project-details-content">
+            <div class="body-text">Completing this project increased my interest in embedded systems, computer architecture, and hardware-software integration. It was one of the first times I built something that combined physical hardware, sensors, computer vision, and Python logic into a working final product. The experience made me more confident working with Raspberry Pi, SPI devices, and real-time data processing.</div>
+            <div class="body-text">I would like to continue improving the system in the future by adding features like storing access logs, using a facial recognition neural network rather than simple detection, adding a physical servo “door lock,” or hosting a local dashboard to manage authorized users.</div>
+            <div class="body-text">Overall, this Discovery Project helped me build practical ECE skills, strengthened my interest in computing hardware, and gave me a strong foundation for future embedded and systems engineering projects.</div>
+          </div>
+        </div>
+
+        <!-- VIDEO DEMO -->
+        <div id="video-demo">
+          <div class="subheader-text">Video Demo</div>
+          <div class="project-details-content">
+            <div class="body-text">Below is a short demo showing the system in action.</div>
+            <div style="margin-top:12px;">
+              <video controls style="width:100%;max-width:900px;">
+                <source src="../assets/IMG_1255.mov" type="video/quicktime">
+                Your browser does not support the video tag. <a href="../assets/IMG_1255.mov">Download the video</a> instead.
+              </video>
+            </div>
+          </div>
+        </div>
+
       <div id="project-gallery">
         <div class="subheader-text">Image Gallery</div>
         <div class="project-gallery-content">
