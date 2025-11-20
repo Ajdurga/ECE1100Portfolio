@@ -87,10 +87,14 @@
           <div class="project-details-content">
             <div class="body-text">Below is a short demo showing the system in action.</div>
             <div style="margin-top:12px;">
-              <video controls style="width:100%;max-width:900px;">
-                <source src="../assets/IMG_1255.mov" type="video/quicktime">
-                Your browser does not support the video tag. <a href="../assets/IMG_1255.mov">Download the video</a> instead.
+              <video controls playsinline preload="metadata" style="width:100%;max-width:900px;">
+                <!-- Prefer an MP4/H.264 version for best browser support. If you have a converted MP4, add it to assets/images and uncomment the line below. -->
+                <source src="../assets/images/IMG_1255.mp4" type="video/mp4">
+                <!-- Fallback to MOV (will work in Safari but not all browsers) -->
+                <source src="../assets/images/IMG_1255.mov" type="video/quicktime">
+                Your browser does not support the video tag. <a href="../assets/images/IMG_1255.mov">Download the video</a> instead.
               </video>
+              <div class="body-text" style="margin-top:8px;font-size:0.95rem;color:#555;">If playback doesn't start, convert <code>IMG_1255.mov</code> to MP4 (H.264) for broad browser compatibility. I can convert it for you if you'd like.</div>
             </div>
           </div>
         </div>
